@@ -42,21 +42,20 @@ It contains images of 90 different animal species, organized into separate direc
 ## Code Overview
 
 1.  **Data Loading and Preprocessing:**
-    * Uses `ImageDataGenerator` for efficient batch processing, data augmentation, and train/validation splitting.
-    * Resizes images to a consistent size for MobileNetV2 input.
-2.  **Model Building:**
-    * Loads the MobileNetV2 pre-trained model (weights from ImageNet).
-    * Adds custom layers for classification (GlobalAveragePooling, Dense, Dropout, Softmax).
-    * Freezes the base MobileNetV2 layers for fine-tuning.
-3.  **Model Training:**
-    * Compiles the model with Adam optimizer and categorical cross-entropy loss.
-    * Uses `EarlyStopping` and `LearningRateScheduler` callbacks for better training.
-    * Trains the model using the training data generator.
-4.  **Model Evaluation:**
-    * Evaluates the model on the validation data.
-    * Generates a classification report and confusion matrix.
-    * Visualizes sample images from the dataset.
+    * Loads image data from the specified directory structure.
+    * Displays sample images from each class using `matplotlib.pyplot`.
+    * Calculates and displays the shape of the images.
+    * Arranges image display in a grid format, dynamically adjusting to the number of classes.
+    * Includes error handling for missing image files or empty class directories.
 
+2.  **Visualization:**
+    * Displays all classes available in the dataset.
+    * Dynamically calculates the number of rows and columns for the image grid.
+    * Uses `matplotlib.pyplot` to display the images.
+    * Displays image shapes and class names as titles.
+    * Includes error handling for missing image files and empty class directories.
+    * Uses `plt.tight_layout()` to prevent overlapping titles.
+      
 ## Improvements
 
 * **Hyperparameter Tuning:** Experiment with different learning rates, batch sizes, and data augmentation techniques.
